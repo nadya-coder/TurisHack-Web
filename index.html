@@ -1,25 +1,500 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nadya Aguado | Sistemas digitales, IA útil y estructura comercial</title>
-<meta name="description" content="Diseño sistemas simples para vender mejor: IA útil, contenido y estructura comercial para turismo, marcas y servicios." />
-<style>
-:root{--bg:#f6f7fb;--surface:#fff;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--primary:#422ed1;--primary-dark:#04112A;--deep:#1C2947}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}a{text-decoration:none;color:inherit}.wrap{width:min(1120px,calc(100% - 32px));margin:0 auto}.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(246,247,251,.85);border-bottom:1px solid var(--line)}.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}.brand{font-weight:800}.nav-links{display:flex;gap:18px;font-size:14px;color:var(--muted)}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:14px;font-weight:700;border:1px solid transparent}.btn-primary{background:var(--primary);color:#fff}.btn-secondary{background:#fff;border-color:var(--line);color:var(--primary-dark)}.hero{padding:72px 0 48px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}.eyebrow{display:inline-block;padding:8px 12px;border-radius:999px;background:#eef2ff;color:var(--primary);font-size:13px;font-weight:700;margin-bottom:18px}h1{margin:0 0 16px;font-size:clamp(36px,6vw,64px);line-height:.98;letter-spacing:-.04em}.hero p{margin:0 0 24px;font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:62ch}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}.hero-note{color:var(--muted);font-size:14px}.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;box-shadow:0 8px 30px rgba(15,23,42,.05)}.hero-side{padding:26px}.hero-side h3{margin:0 0 14px;font-size:20px}.mini-list{display:grid;gap:12px}.mini-item{padding:14px;border-radius:16px;background:#f8fafc;border:1px solid var(--line)}.mini-item strong{display:block;margin-bottom:4px}section{padding:24px 0 64px}.section-title{margin:0 0 10px;font-size:clamp(28px,4vw,42px);letter-spacing:-.03em}.section-lead{margin:0 0 28px;color:var(--muted);max-width:72ch}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.box,.service-card{padding:24px}.box h3,.service-card h3{margin:0 0 10px;font-size:22px}.box p,.service-card p{margin:0;color:var(--muted)}.service-card ul{margin:14px 0 0;padding-left:18px;color:var(--muted)}.service-card li+li{margin-top:6px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.steps{display:grid;gap:14px}.step{padding:18px 20px;display:grid;grid-template-columns:72px 1fr;gap:16px;align-items:start}.step-num{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:#eef2ff;color:var(--primary);font-weight:800;font-size:20px}.logos{display:flex;flex-wrap:wrap;gap:10px}.tag{padding:10px 12px;background:#fff;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:14px}.cta{padding:30px;display:grid;gap:12px;background:linear-gradient(135deg,var(--primary-dark),var(--deep));color:#fff}.cta p{margin:0;color:rgba(255,255,255,.8)}.footer{padding:30px 0 40px;color:var(--muted);font-size:14px}@media (max-width:900px){.hero,.grid-3,.grid-2{grid-template-columns:1fr}.nav-links{display:none}.step{grid-template-columns:1fr}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turishack | Menos consultas perdidas. Más orden para vender turismo.</title>
+  <meta name="description" content="Turishack ayuda a negocios turísticos a responder mejor, ordenar consultas y vender con más claridad usando sistemas simples y herramientas accesibles." />
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --primary: #422ed1;
+      --primary-dark: #04112A;
+      --accent: #88EAD8;
+      --deep: #1C2947;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(246,247,251,.85);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 12px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: white;
+      border-color: var(--line);
+      color: var(--primary-dark);
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: .98;
+      letter-spacing: -.04em;
+    }
+
+    .hero p {
+      margin: 0 0 24px;
+      font-size: clamp(17px, 2vw, 20px);
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .hero-note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 8px 30px rgba(15,23,42,.05);
+    }
+
+    .hero-side {
+      padding: 26px;
+    }
+
+    .hero-side h3 {
+      margin: 0 0 14px;
+      font-size: 20px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mini-item {
+      padding: 14px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+    }
+
+    .mini-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    section {
+      padding: 24px 0 64px;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -.03em;
+    }
+
+    .section-lead {
+      margin: 0 0 28px;
+      color: var(--muted);
+      max-width: 72ch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .box, .service-card {
+      padding: 24px;
+    }
+
+    .box h3, .service-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .box p, .service-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .service-card ul {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .service-card li + li {
+      margin-top: 6px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      padding: 18px 20px;
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: #eef2ff;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 10px 12px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cta {
+      padding: 30px;
+      display: grid;
+      gap: 12px;
+      background: linear-gradient(135deg, var(--primary-dark), var(--deep));
+      color: white;
+    }
+
+    .cta p {
+      margin: 0;
+      color: rgba(255,255,255,.8);
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .social-link {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--primary-dark);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .footer {
+      padding: 30px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero, .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="nav"><div class="wrap nav-inner"><div class="brand">Nadya Aguado</div><div class="nav-links"><a href="#servicios">Servicios</a><a href="#portfolio">Portfolio</a><a href="#marcas">Verticales</a><a href="#contacto">Contacto</a></div><a class="btn btn-primary" href="https://wa.me/542614194636?text=Hola%20Nadya,%20quiero%20consultarte%20por%20tus%20servicios." target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div>
-<main class="wrap">
-<section class="hero"><div><span class="eyebrow">Sistemas digitales · IA útil · estructura comercial</span><h1>Menos caos digital.<br>Más claridad para vender.</h1><p>Diseño sistemas simples para que negocios, marcas y servicios respondan mejor, expliquen mejor lo que ofrecen y dejen de perder oportunidades por desorden, mensajes flojos o procesos improvisados.</p><div class="hero-actions"><a class="btn btn-primary" href="https://wa.me/542614194636?text=Hola%20Nadya,%20quiero%20ver%20c%C3%B3mo%20trabaj%C3%A1s%20y%20si%20me%20pod%C3%A9s%20ayudar%20con%20mi%20negocio." target="_blank" rel="noopener noreferrer">Quiero ver cómo trabajás</a><a class="btn btn-secondary" href="#servicios">Ver servicios</a></div><div class="hero-note">Trabajo con turismo, marcas, servicios e implementación práctica de IA.</div></div><div class="card hero-side"><h3>Qué resuelvo</h3><div class="mini-list"><div class="mini-item"><strong>Consultas desordenadas</strong><span>Mensajes que se enfrían, respuestas improvisadas y falta de seguimiento.</span></div><div class="mini-item"><strong>Servicios mal explicados</strong><span>Ofertas que existen, pero no terminan de entenderse ni venderse.</span></div><div class="mini-item"><strong>Contenido sin sistema</strong><span>Ideas sueltas, mucho tiempo perdido y poca claridad para comunicar.</span></div></div></div></section>
-<section><h2 class="section-title">Qué hago</h2><p class="section-lead">No trabajo desde la promesa vacía de “automatizarlo todo”. Trabajo sobre problemas concretos: atención, estructura, mensajes, presencia digital y sistemas simples que un negocio realmente pueda usar.</p><div class="grid-3" id="servicios"><div class="card service-card"><h3>Sistema Anti-Consultas Perdidas</h3><p>Ordeno mensajes, respuestas y seguimiento para que una consulta no se pierda por desorden digital.</p><ul><li>Diagnóstico de fugas en la atención</li><li>Mensajes base y respuestas rápidas</li><li>Orden de WhatsApp Business</li><li>Seguimiento simple</li></ul><div class="actions"><a class="btn btn-primary" href="https://wa.me/542614194636?text=Hola%20Nadya,%20quiero%20consultarte%20por%20el%20Sistema%20Anti-Consultas%20Perdidas." target="_blank" rel="noopener noreferrer">Consultar</a></div></div><div class="card service-card"><h3>Webs comerciales</h3><p>Diseño landing pages y webs simples orientadas a claridad, credibilidad y acción.</p><ul><li>Estructura web y arquitectura</li><li>Copy de conversión</li><li>Implementación simple</li><li>Checklist de validación</li></ul><div class="actions"><a class="btn btn-primary" href="https://wa.me/542614194636?text=Hola%20Nadya,%20quiero%20consultarte%20por%20una%20web%20comercial." target="_blank" rel="noopener noreferrer">Consultar</a></div></div><div class="card service-card"><h3>Sistemas de contenido e IA útil</h3><p>Creo estructuras y recursos para producir contenido con más velocidad y menos improvisación.</p><ul><li>Calendarios y prompts</li><li>GPTs operativos</li><li>Sistemas para marcas verticales</li><li>Activos digitales reutilizables</li></ul><div class="actions"><a class="btn btn-primary" href="https://wa.me/542614194636?text=Hola%20Nadya,%20quiero%20consultarte%20por%20sistemas%20de%20contenido%20e%20IA%20%C3%BAtil." target="_blank" rel="noopener noreferrer">Consultar</a></div></div></div></section>
-<section id="portfolio"><h2 class="section-title">Cómo trabajo</h2><p class="section-lead">Mi enfoque no empieza en la herramienta. Empieza en el problema, en la fricción y en la acción que ese negocio necesita que ocurra.</p><div class="steps"><div class="card step"><div class="step-num">01</div><div><strong>Diagnóstico</strong><br><span style="color:#475569">Reviso qué está roto: atención, oferta, mensajes, estructura o contenido.</span></div></div><div class="card step"><div class="step-num">02</div><div><strong>Estrategia simple</strong><br><span style="color:#475569">Defino una solución usable, sin agregar complejidad innecesaria.</span></div></div><div class="card step"><div class="step-num">03</div><div><strong>Implementación</strong><br><span style="color:#475569">Bajo eso a textos, estructura, recursos, sistema o página.</span></div></div><div class="card step"><div class="step-num">04</div><div><strong>Validación</strong><br><span style="color:#475569">Dejo checklist, criterios y próximos pasos para que no quede en teoría.</span></div></div></div></section>
-<section id="marcas"><h2 class="section-title">Verticales y proyectos</h2><p class="section-lead">Trabajo desde una marca personal principal y desarrollo verticales según nicho y oportunidad.</p><div class="grid-2"><div class="card box"><h3>Turishack</h3><p>Sistemas simples para negocios turísticos que quieren responder mejor, ordenar consultas y vender con más claridad.</p><div style="margin-top:16px"><a class="btn btn-secondary" href="https://wa.me/542614194636?text=Hola%20Nadya,%20quiero%20consultarte%20por%20Turishack." target="_blank" rel="noopener noreferrer">Ver Turishack</a></div></div><div class="card box"><h3>SENSSIA</h3><p>Proyecto orientado a educación, herramientas y comunicación aplicada a productos sensoriales y gourmet.</p><div style="margin-top:16px"><a class="btn btn-secondary" href="https://wa.me/542614194636?text=Hola%20Nadya,%20quiero%20consultarte%20por%20SENSSIA." target="_blank" rel="noopener noreferrer">Consultar</a></div></div></div></section>
-<section><h2 class="section-title">Herramientas que uso</h2><p class="section-lead">No vendo herramientas. Las uso cuando sirven. Mi criterio está primero; la plataforma viene después.</p><div class="logos"><span class="tag">ChatGPT</span><span class="tag">Canva</span><span class="tag">WhatsApp Business</span><span class="tag">Notion</span><span class="tag">Google Forms</span><span class="tag">CapCut</span><span class="tag">Blackbox AI</span><span class="tag">Lovable</span></div></section>
-<section id="contacto"><div class="card cta"><h2 class="section-title" style="color:white; margin:0;">Si hoy tu negocio está funcionando con demasiado caos, eso se puede ordenar.</h2><p>Podemos empezar por atención, por web, por contenido o por estructura. Lo importante es dejar de improvisar donde más te cuesta vender.</p><div class="hero-actions" style="margin:0;"><a class="btn btn-primary" href="https://wa.me/542614194636?text=Hola%20Nadya,%20quiero%20consultarte%20por%20mis%20necesidades%20digitales." target="_blank" rel="noopener noreferrer">Escribirme por WhatsApp</a><a class="btn btn-secondary" href="mailto:turishack@gmail.com">Enviar email</a></div></div></section>
-</main>
-<footer class="wrap footer"><div>Nadya Aguado · Sistemas digitales, IA útil y estructura comercial</div></footer>
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">Turishack</div>
+      <div class="nav-links">
+        <a href="#servicio">Servicio</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#kit">Kit gratuito</a>
+        <a href="#redes">Redes</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/542614194636?text=Hola,%20quiero%20consultarte%20por%20Turishack." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Turismo · atención comercial · sistemas simples</span>
+        <h1>Dejá de perder consultas en tu negocio turístico</h1>
+        <p>Turishack ayuda a negocios turísticos a responder mejor, ordenar mensajes y vender con más claridad, sin depender del caos diario ni de herramientas imposibles de sostener.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#como-funciona">Quiero ver cómo funciona</a>
+          <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdJvmmTLhDmNic1DTpYk_cDZaXWFBhxbDc6ueofXN_0IrTSRw/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">Descargar kit</a>
+        </div>
+        <div class="hero-note">Ideal para alojamientos, experiencias, guías, agencias y prestadores turísticos que reciben consultas por WhatsApp, Instagram o Facebook.</div>
+      </div>
+
+      <div class="card hero-side">
+        <h3>Qué suele estar pasando</h3>
+        <div class="mini-list">
+          <div class="mini-item">
+            <strong>Respondés cada mensaje distinto</strong>
+            <span>La atención depende del apuro, del cansancio o del tiempo que te quede.</span>
+          </div>
+          <div class="mini-item">
+            <strong>No filtrás bien la consulta</strong>
+            <span>La conversación se alarga porque faltan datos clave desde el inicio.</span>
+          </div>
+          <div class="mini-item">
+            <strong>No hacés seguimiento</strong>
+            <span>La persona preguntó, pero nadie volvió a guiarla hacia la reserva.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Por qué Turishack</h2>
+      <p class="section-lead">Turishack nace para ayudar a negocios turísticos chicos y medianos que reciben consultas todos los días, pero no tienen un sistema claro para responder, organizar y hacer seguimiento. No te lleno de herramientas ni tecnicismos. Trabajo sobre lo que más impacto tiene: tus mensajes, tus respuestas, tu atención y el camino desde la consulta hasta la reserva.</p>
+      <div class="grid-3">
+        <div class="card box">
+          <h3>Menos improvisación</h3>
+          <p>Dejás de responder según el momento y empezás a usar una estructura más clara.</p>
+        </div>
+        <div class="card box">
+          <h3>Más orden comercial</h3>
+          <p>Entendés dónde se enfrían tus consultas y qué partes de la atención conviene corregir primero.</p>
+        </div>
+        <div class="card box">
+          <h3>Sin humo técnico</h3>
+          <p>La idea no es que aprendas IA por moda. La idea es que empieces a funcionar mejor.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicio">
+      <h2 class="section-title">Servicio principal</h2>
+      <p class="section-lead">Hoy el foco principal de Turishack es uno: ayudarte a ordenar la atención para que no sigas perdiendo consultas por desorden digital.</p>
+
+      <div class="grid-2">
+        <div class="card service-card">
+          <h3>Sistema Anti-Consultas Perdidas para turismo</h3>
+          <p>Un servicio pensado para negocios turísticos que reciben consultas por WhatsApp, Instagram o Facebook y hoy responden sin una estructura clara.</p>
+          <ul>
+            <li>Diagnóstico de fugas en la atención</li>
+            <li>Mensajes base y respuestas rápidas</li>
+            <li>Orden inicial de WhatsApp</li>
+            <li>Guía de seguimiento simple</li>
+            <li>Recomendaciones aplicadas a tu caso</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://wa.me/542614194636?text=Hola,%20quiero%20el%20Sistema%20Anti-Consultas%20Perdidas%20para%20mi%20negocio%20tur%C3%ADstico." target="_blank" rel="noopener noreferrer">Quiero este servicio</a>
+          </div>
+        </div>
+
+        <div class="card service-card" id="kit">
+          <h3>Kit gratuito para empezar</h3>
+          <p>Una guía rápida para negocios turísticos que quieren ordenar mensajes, respuestas y seguimiento sin arrancar desde cero.</p>
+          <ul>
+            <li>Errores comunes que enfrían consultas</li>
+            <li>Uso básico de WhatsApp Business</li>
+            <li>Respuestas base para no improvisar</li>
+            <li>Ejemplos prácticos para atención turística</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdJvmmTLhDmNic1DTpYk_cDZaXWFBhxbDc6ueofXN_0IrTSRw/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">Descargar kit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona">
+      <h2 class="section-title">Cómo funciona</h2>
+      <p class="section-lead">No se trata de hacer una transformación gigante de entrada. Se trata de ordenar primero lo que más impacto tiene en tu negocio: cómo entra una consulta, cómo se responde y qué pasa después.</p>
+
+      <div class="steps">
+        <div class="card step">
+          <div class="step-num">01</div>
+          <div>
+            <strong>Revisamos tu atención actual</strong><br>
+            <span style="color:#475569">Vemos por qué canal llegan las consultas, cómo se responden y dónde se enfrían.</span>
+          </div>
+        </div>
+        <div class="card step">
+          <div class="step-num">02</div>
+          <div>
+            <strong>Detectamos fugas</strong><br>
+            <span style="color:#475569">Identificamos qué mensajes faltan, qué respuestas generan fricción y qué parte del proceso está floja.</span>
+          </div>
+        </div>
+        <div class="card step">
+          <div class="step-num">03</div>
+          <div>
+            <strong>Ordenamos una base simple</strong><br>
+            <span style="color:#475569">Armamos respuestas, seguimiento y una estructura básica que puedas usar de verdad.</span>
+          </div>
+        </div>
+        <div class="card step">
+          <div class="step-num">04</div>
+          <div>
+            <strong>Te llevás claridad</strong><br>
+            <span style="color:#475569">No solo corregís mensajes: entendés mejor cómo vender sin improvisar cada consulta.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Herramientas que uso según el caso</h2>
+      <p class="section-lead">No vendo herramientas por vender. Las uso cuando sirven. El foco está en ordenar mejor la atención y la comunicación.</p>
+      <div class="logos">
+        <span class="tag">WhatsApp Business</span>
+        <span class="tag">Instagram</span>
+        <span class="tag">Facebook</span>
+        <span class="tag">Google Forms</span>
+        <span class="tag">Canva</span>
+        <span class="tag">ChatGPT</span>
+      </div>
+    </section>
+
+    <section id="redes">
+      <h2 class="section-title">Seguime en Turishack</h2>
+      <p class="section-lead">Si querés ver cómo pienso el turismo, la atención y los sistemas simples para vender mejor, estas son las cuentas donde comparto contenido y recursos.</p>
+      <div class="socials">
+        <a class="social-link" href="https://www.instagram.com/turis_hack/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=61580079255047" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a class="social-link" href="https://www.youtube.com/@TurishackIAparaTurismo" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a class="social-link" href="https://www.tiktok.com/@turishack0" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a class="social-link" href="mailto:turishack@gmail.com?subject=Consulta%20desde%20Turishack">Email</a>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="card cta">
+        <h2 class="section-title" style="color:white; margin:0;">Si hoy tus consultas están desordenadas, eso se puede corregir.</h2>
+        <p>Podés empezar con el kit gratuito o escribirme para ver si el Sistema Anti-Consultas Perdidas encaja con tu negocio turístico.</p>
+        <div class="hero-actions" style="margin:0;">
+          <a class="btn btn-primary" href="https://wa.me/542614194636?text=Hola,%20quiero%20ordenar%20las%20consultas%20de%20mi%20negocio%20tur%C3%ADstico." target="_blank" rel="noopener noreferrer">Escribirme por WhatsApp</a>
+          <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdJvmmTLhDmNic1DTpYk_cDZaXWFBhxbDc6ueofXN_0IrTSRw/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">Descargar kit</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <div>Turishack · Negocios turísticos con menos caos digital y más claridad para vender.</div>
+  </footer>
 </body>
 </html>
